@@ -136,9 +136,12 @@ There is a gap after 1938 and before 1950 because of World War II. As you can se
 
 Conclusion
 ===================
+
 #. Being the Host country does not increase your chance of winning. Even as time went on, the host country never really had any adventage, even though the average percent of wins were above 50%
 #. Being the home team did at one point increase your chance of winning. But now the home and away teams a much more evenly spaced. 
 #. As the world cup got more popular, more teams starting showing up and winning matches. 
 #. Over time, the world cup has gotten more matches while scoring less per game.
-#. 
+#. Attendence has gone up as the world cup got more popular
+
+
 The world cup has change drasticly seen the 1930's! It has gotten increasingly popular every four years, it has continued to increase the amount of games per cup, it has continued to increase the level of games played and yet also increase the amount of countries allowed in also increasing compition. Attendence has also steady increased over time. Yet the coolest thing to note about this data is how it highlights the development of the world and how different countries started to improve enough to be a part of a global event such as the world cup. All in all, the world cup has continued to grow every year, being more and more people together to enjoy a wonderful sport. 
