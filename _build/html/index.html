@@ -70,16 +70,17 @@
 </div>
 <div class="section" id="data-accusition">
 <h1>Data Accusition<a class="headerlink" href="#data-accusition" title="Permalink to this headline">¶</a></h1>
-<p>The first step to any data science project, is to aquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, expetinoally sports. And after looking around for a while, we did in fact find the data we were looking for <a class="reference external" href="...">here</a>. On that website&#8217;s page, we found three datasets. The first had information on the gernal world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data monuvering to get them all together and working. This was done by doing a quick join in pandas like this:
-.. code-block:: python</p>
-<blockquote>
-<div>matchesJoin = matches.set_index([&#8216;Year&#8217;]).join(cups.drop([&#8216;Attendance&#8217;],axis = 1).set_index([&#8216;Year&#8217;]))</div></blockquote>
+<p>The first step to any data science project, is to aquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, expetinoally sports. And after looking around for a while, we did in fact find the data we were looking for <a class="reference external" href="...">here</a>. On that website&#8217;s page, we found three datasets. The first had information on the gernal world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data monuvering to get them all together and working. This was done by doing a quick join in pandas like this:</p>
 <p>the dataframe <em>matches</em> is the dataframe with every match in each world cup. next, the set_index([&#8216;Year&#8217;]) is used to make sure the two dataframes have the same index. Next, within the join function, the <em>cups</em> dataframe contains the gernal information on each world cup. Notice the .drop function being called on the <em>cups</em> dataframe. This was done because both <em>matches</em> and <em>cups</em> have a column called &#8220;Attendance&#8221; so to make the join work, one of them had to go. We choose to drop the <em>cups</em> column because there are more match attendaces then cups so later on the <em>matches</em> attendance column will be used along with the other info in <em>matches</em> and <em>cups</em> so having that column is more important. Finally, we set the index of the <em>cups</em> dataframe to be the same as the <em>matches</em> dataframe and we got ourselves a good joined dataframe. This is just the beginning of all the data munipulations that are done to this dataframe to create the graphs later on in this website.</p>
 </div>
 <div class="section" id="host-country-data">
 <h1>Host Country Data<a class="headerlink" href="#host-country-data" title="Permalink to this headline">¶</a></h1>
-<p>To start answer the big question <strong>How has the world cup changed over time?</strong> we started by looking at how the host country did over time, and how has being the &#8220;home&#8221; country changed over time. <a class="reference external" href="notebooks/Worldcupdata[HostCountry].ipynb">Here</a> is the analysis of that data</p>
+<p>To start answer the big question <strong>How has the world cup changed over time?</strong> we started by looking at how the host country did over time, and how has being the &#8220;home&#8221; country changed over time. <a class="reference external" href="notebooks/Worldcupdata.ipynb">Here</a> is the analysis of that data</p>
 <p>From this analysis we created four graphs. The first one shows the number of times a host country made it into the final four.</p>
+<div class="figure">
+<img alt="_images/hosttopfour.png" src="_images/hosttopfour.png" />
+</div>
+<p>In</p>
 </div>
 
 
