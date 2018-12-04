@@ -15,7 +15,7 @@ Welcome to FootBall Visualzation!
 Indices and tables
 ==================
 
-* :ref:`genindex`
+* :ref:`Abstract`
 * :ref:`modindex`
 * :ref:`search`
 
