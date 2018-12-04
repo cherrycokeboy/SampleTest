@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to FootBall Visualzation’s documentation! &#8212; FootBall Visualzation  documentation</title>
+    <title>Welcome to FootBall Visualzation! &#8212; FootBall Visualzation  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -42,8 +42,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-football-visualzation-s-documentation">
-<h1>Welcome to FootBall Visualzation&#8217;s documentation!<a class="headerlink" href="#welcome-to-football-visualzation-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-football-visualzation">
+<h1>Welcome to FootBall Visualzation!<a class="headerlink" href="#welcome-to-football-visualzation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -68,10 +68,11 @@
 </ol>
 <p>In the end, we found that the world cup has been increasing in popularity and increasing in the number of teams participating. However, the most interesting thing to notice, is how the world cup not only grow on it&#8217;s own, but also grew along side the world as a whole.</p>
 </div>
-<div class="section" id="data-accusition">
-<h1>Data Accusition<a class="headerlink" href="#data-accusition" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-accusition-and-manipulation">
+<h1>Data Accusition and Manipulation<a class="headerlink" href="#data-accusition-and-manipulation" title="Permalink to this headline">¶</a></h1>
 <p>The first step to any data science project, is to aquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, expetinoally sports. And after looking around for a while, we did in fact find the data we were looking for <a class="reference external" href="...">here</a>. On that website&#8217;s page, we found three datasets. The first had information on the gernal world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data monuvering to get them all together and working. This was done by doing a quick join in pandas like this:</p>
 <p>the dataframe <em>matches</em> is the dataframe with every match in each world cup. next, the set_index([&#8216;Year&#8217;]) is used to make sure the two dataframes have the same index. Next, within the join function, the <em>cups</em> dataframe contains the gernal information on each world cup. Notice the .drop function being called on the <em>cups</em> dataframe. This was done because both <em>matches</em> and <em>cups</em> have a column called &#8220;Attendance&#8221; so to make the join work, one of them had to go. We choose to drop the <em>cups</em> column because there are more match attendaces then cups so later on the <em>matches</em> attendance column will be used along with the other info in <em>matches</em> and <em>cups</em> so having that column is more important. Finally, we set the index of the <em>cups</em> dataframe to be the same as the <em>matches</em> dataframe and we got ourselves a good joined dataframe. This is just the beginning of all the data munipulations that are done to this dataframe to create the graphs later on in this website.</p>
+<p>The other big change to the data was adding a column for which team won each match. This may not at first seem like such a challenge, because there are columns of which how many times a team scored in the match. However, the score doesn&#8217;t take into account if the match was a tie at the end of regulation time. So one of the harder things to add within the data was a column that could tell into another column &#8220;win condition&#8221; and if that row&#8217;s cell had that countries name in it, then say true. Otherwise (if they did lose) then say False. More information on how this was done in the notebook</p>
 </div>
 <div class="section" id="host-country-data">
 <h1>Host Country Data<a class="headerlink" href="#host-country-data" title="Permalink to this headline">¶</a></h1>
@@ -96,6 +97,14 @@
 </div>
 <p>From the three graphs, it&#8217;s clear that there was at one point a very signficant home field advantage. It seems that before 1970, if you were the home team, you were almost certain to win. And with a standerd deveation of 0.088, 50% is clearly not close to the mean. However, after 1970, the mean ratio of wins is closer to 50% being within one standerd deviation. So this means that at one point, there was a significant chance of winning if you were the home team. But now a days, it is more random. Also from the first graph, you can see a postive linear slope that shows that as time went on, more matches were played. Yet contrasting to what was said before, as time went on, the percent of times the home team won has gone down over time. So, what we can gather from this data, is that the world cup has both gotten more random in it&#8217;s selection of who is the home team, and, more importantly, that as time went on, more teams were more evenly matched.</p>
 </div>
+<div class="section" id="country-wins">
+<h1>Country Wins<a class="headerlink" href="#country-wins" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s take a more broader view of the world cup and look at each countires win rate. The first graph looks at the number of times a country has won a world cup</p>
+<div class="figure">
+<img alt="_images/matcheswinovertime.png" src="_images/matcheswinovertime.png" />
+</div>
+<p>Notice how few countries there are! out of 20 different world cups, only eight countries have every won the whole thing. Really shows how dominating some countries are at football!</p>
+</div>
 
 
           </div>
@@ -105,12 +114,13 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to FootBall Visualzation&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#">Welcome to FootBall Visualzation!</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 <li><a class="reference internal" href="#abstract">Abstract</a></li>
-<li><a class="reference internal" href="#data-accusition">Data Accusition</a></li>
+<li><a class="reference internal" href="#data-accusition-and-manipulation">Data Accusition and Manipulation</a></li>
 <li><a class="reference internal" href="#host-country-data">Host Country Data</a></li>
 <li><a class="reference internal" href="#home-team-data">Home Team Data</a></li>
+<li><a class="reference internal" href="#country-wins">Country Wins</a></li>
 </ul>
 <div class="relations">
 <h3>Related Topics</h3>

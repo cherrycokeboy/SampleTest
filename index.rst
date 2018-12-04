@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to FootBall Visualzation's documentation!
+Welcome to FootBall Visualzation!
 =================================================
 
 .. toctree::
@@ -33,14 +33,16 @@ This website was created by Gavin Schaeferle and Austin "last name". The purpose
 
 In the end, we found that the world cup has been increasing in popularity and increasing in the number of teams participating. However, the most interesting thing to notice, is how the world cup not only grow on it's own, but also grew along side the world as a whole. 
 
-Data Accusition
-============================
+Data Accusition and Manipulation
+======================================
 The first step to any data science project, is to aquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, expetinoally sports. And after looking around for a while, we did in fact find the data we were looking for `here <...>`_. On that website's page, we found three datasets. The first had information on the gernal world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data monuvering to get them all together and working. This was done by doing a quick join in pandas like this: 
 
 .. code-block:: python
 	matchesJoin = matches.set_index(['Year']).join(cups.drop(['Attendance'],axis = 1).set_index(['Year']))
 
 the dataframe *matches* is the dataframe with every match in each world cup. next, the set_index(['Year']) is used to make sure the two dataframes have the same index. Next, within the join function, the *cups* dataframe contains the gernal information on each world cup. Notice the .drop function being called on the *cups* dataframe. This was done because both *matches* and *cups* have a column called "Attendance" so to make the join work, one of them had to go. We choose to drop the *cups* column because there are more match attendaces then cups so later on the *matches* attendance column will be used along with the other info in *matches* and *cups* so having that column is more important. Finally, we set the index of the *cups* dataframe to be the same as the *matches* dataframe and we got ourselves a good joined dataframe. This is just the beginning of all the data munipulations that are done to this dataframe to create the graphs later on in this website. 
+
+The other big change to the data was adding a column for which team won each match. This may not at first seem like such a challenge, because there are columns of which how many times a team scored in the match. However, the score doesn't take into account if the match was a tie at the end of regulation time. So one of the harder things to add within the data was a column that could tell into another column "win condition" and if that row's cell had that countries name in it, then say true. Otherwise (if they did lose) then say False. More information on how this was done in the notebook
 
 
 Host Country Data
@@ -71,7 +73,13 @@ The three graphs are very similar to the host country's three graph figure. The 
 From the three graphs, it's clear that there was at one point a very signficant home field advantage. It seems that before 1970, if you were the home team, you were almost certain to win. And with a standerd deveation of 0.088, 50% is clearly not close to the mean. However, after 1970, the mean ratio of wins is closer to 50% being within one standerd deviation. So this means that at one point, there was a significant chance of winning if you were the home team. But now a days, it is more random. Also from the first graph, you can see a postive linear slope that shows that as time went on, more matches were played. Yet contrasting to what was said before, as time went on, the percent of times the home team won has gone down over time. So, what we can gather from this data, is that the world cup has both gotten more random in it's selection of who is the home team, and, more importantly, that as time went on, more teams were more evenly matched. 
 
 
+Country Wins
+=====================
+Let's take a more broader view of the world cup and look at each countires win rate. The first graph looks at the number of times a country has won a world cup
 
+.. figure:: image/matcheswinovertime.png
+
+Notice how few countries there are! out of 20 different world cups, only eight countries have every won the whole thing. Really shows how dominating some countries are at football! 
 
 
 
