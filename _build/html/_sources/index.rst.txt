@@ -77,9 +77,21 @@ Country Wins
 =====================
 Let's take a more broader view of the world cup and look at each countires win rate. The first graph looks at the number of times a country has won a world cup
 
-.. figure:: image/matcheswinovertime.png
+.. figure:: image/numberofcountrywin.png
 
-Notice how few countries there are! out of 20 different world cups, only eight countries have every won the whole thing. Really shows how dominating some countries are at football! 
+Notice how few countries there are! out of 20 different world cups, only eight countries have every won the whole thing. Really shows how dominating some countries are at football! This doesn't really answer the overall question **How had the world cup changed over time** but it does give us some backgroup into the next few graphs that will answer this question
+
+The next graph we created was how many times a country has won a match in the world cup. 
+
+.. figure:: image/numberofcountrymatcheswin.png
+
+This time, there are a lot more countries. Although a lot of them only won one game, plus this doesn't look at any teams that haven't won any games, just teams that won them. So again, this graph doesn't really answer the overall question, but does give some context into answering it later on
+
+The final one we did was create a interactive graph that shows a different graph for each year. Each graph shows how many wins a country had for a specifc world cup
+
+.. figure:: image/matcheswinovertime.png 
+
+this figure doesn't have the interactiveness to it but the notebooke does here. What this interactive graph shows us this the change in development in countries over time. starting in 1930, only nine country even won a game. but by 2014, 27 teams had won a match in the world cup. 
 
 
 
