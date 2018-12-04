@@ -128,7 +128,7 @@ Attendence
 ================
 The attendence graph shows the total attendance per year at the FIFA World Cup.
 
-.. figure:: image/atten.png
+.. figure:: image/attend.png
 
 There is a gap after 1938 and before 1950 because of World War II. As you can see the total attendance per year keeps growing until hitting its peak in 1994, then dips down a bit and returns to a positive slope. We believe that the peak in attendance during that year is determined by a couple factors. First, is that because of the Soviet Union collapsing in 1991, many new countries were born and new teams came into the world. Secondly, is that the World Cup that year was held in the United States which at the time had a lot of high capacity stadiums. Third, it was the first year the new country Russia had been in the World Cup as well as the newly reformed Germany. Lastly, the final was between Italy and Brazil, where Italy had been a powerhouse in the past decade and Brazil was beginning their stretch of dominance for the next several World Cups. The match ended 0-0 and went to penalties where Brazil won 3-2.
 
