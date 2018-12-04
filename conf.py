@@ -51,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'FootBall Visualzation'
-copyright = '2018, Gavin Schaeferle, Austin Hanson'
+copyright = '2018, Gavin Schaeferle, Austin Hansen'
 author = 'Gavin Schaeferle, Austin Hanson'
 
 # The version info for the project you're documenting, acts as replacement for
