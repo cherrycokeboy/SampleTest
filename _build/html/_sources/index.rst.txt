@@ -22,14 +22,15 @@ Indices and tables
 Abstract
 ====================
 
-This website was created by Gavin Schaeferle and Austin "last name". The purpose of this website is to analysis data about the Football World Cup. To do this, we set about answering one big question: **How has the world cup changed over time?** To answer this question, we focused on multiple aspects of our data, these subsections are 
+This website was created by Gavin Schaeferle and Austin Hansen. The purpose of this website is to analysis data about the Football World Cup. To do this, we set about answering one big question: **How has the world cup changed over time?** To answer this question, we focused on multiple aspects of our data, these subsections are 
 
 #. "Does being the host country increase your chances of winning?" 
 #. "Does being the home team in a match increase your chances of winning?"
-#. "Which country has won the most World Cups? And Which team won the most matches within the World Cup?
+#. "Which country has won the most World Cups? And Which team won the most matches within the World Cup?"
+#. "Which country has gotten to the most semi-finals?"
 #. "Which World Cup has had the most scoring?"
-#. "Which World Cup had the most autendous?"
-#. "Which World Cup had the most penenties?"
+#. "Which World Cup had the most attendence?"
+
 
 In the end, we found that the world cup has been increasing in popularity and increasing in the number of teams participating. However, the most interesting thing to notice, is how the world cup not only grow on it's own, but also grew along side the world as a whole. 
 
@@ -38,6 +39,7 @@ Data Accusition and Manipulation
 The first step to any data science project, is to aquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, expetinoally sports. And after looking around for a while, we did in fact find the data we were looking for `here <...>`_. On that website's page, we found three datasets. The first had information on the gernal world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data monuvering to get them all together and working. This was done by doing a quick join in pandas like this: 
 
 .. code-block:: python
+
 	matchesJoin = matches.set_index(['Year']).join(cups.drop(['Attendance'],axis = 1).set_index(['Year']))
 
 the dataframe *matches* is the dataframe with every match in each world cup. next, the set_index(['Year']) is used to make sure the two dataframes have the same index. Next, within the join function, the *cups* dataframe contains the gernal information on each world cup. Notice the .drop function being called on the *cups* dataframe. This was done because both *matches* and *cups* have a column called "Attendance" so to make the join work, one of them had to go. We choose to drop the *cups* column because there are more match attendaces then cups so later on the *matches* attendance column will be used along with the other info in *matches* and *cups* so having that column is more important. Finally, we set the index of the *cups* dataframe to be the same as the *matches* dataframe and we got ourselves a good joined dataframe. This is just the beginning of all the data munipulations that are done to this dataframe to create the graphs later on in this website. 
@@ -55,7 +57,7 @@ From this analysis we created two graphs. The first one shows the number of time
 
 From just this graph, it doesn't seem like there is much evidence to conclude that meaning the host country means you will be in the semi-finals. While the true bar is slightly higher, it's not enough to conclude any difference. What this graph is used for a start into some more interesting graphs comparing all matches to host country, which starts to get more interesting.
 
-The second one, we created three graphs that show three different things. The first shows the total host country wins over each world cup. The second shows the percent of wins by the host country each world cup. And finally the last one is a bit hard to put into words. Mainly, each block's height is the the number of times a percent of wins by the host country was between 0.2-0.29; 0.3-0.39; ... 
+The second one, we created three graphs that show three different things. The first shows the total host country wins over each world cup. The second shows the percent of wins by the host country each world cup. And finally the last one is a bit hard to put into words. Mainly, each block's height is the the number of times a percent of wins by the host country was between 0.2-0.25; 0.25-0.30; ... 
 
 .. figure:: image/hostratio.png
 
@@ -91,7 +93,43 @@ The final one we did was create a interactive graph that shows a different graph
 
 .. figure:: image/matcheswinovertime.png 
 
-this figure doesn't have the interactiveness to it but the notebooke does here. What this interactive graph shows us this the change in development in countries over time. starting in 1930, only nine country even won a game. but by 2014, 27 teams had won a match in the world cup. 
+this figure doesn't have the interactiveness to it but the notebooke does here. What this interactive graph shows us this the change in development in countries over time. starting in 1930, only nine country even won a game. but by 2014, 27 teams had won a match in the world cup. This bigger increase in teams shows how football's popularity has increased over time, and how countries have developed over time. One more interesting thing about the graphs is that you can see when the world cup team selection commities increased there selection of countires. this increase happend right around the 80's where in 1978, 13 teams won a match from 1982 where 21 teams won a match. The team increase then doesn't occur again until 1998 where 28 teams win a match. This again shows the development of the world cup as a popular sporting event across the world and the development of more and more countries, as more countries are elegable to partake in a heavly euopean/brazilian game. 
+
+Semi-Finals
+==================
+The next graph answers the question: "Which country has gotten to the most semi-finals?"
+This secion only has one graph but it is an interaction graph. Again, you won't be able to view on the website so instead, view it `here <...>`_. This graph shows the amount of semi-final finishes per country over time. The picture below shows the total number of semi-final finishes between 1930 and 2014. 
+
+.. figure:: image/semi-finals.png
+
+The first instersting thing to note is that the first two world cups didn't have a single repeat in semi-finalists. Showing that back then, no country was yet a dominiate force to be reckened with just yet. Also another thing about the first few world cups, Brazil (the soon to be number one football team) was not in the first two semi-finals. However, after that time, there semi-final placements would skyrocket at a fast pace. Another interesting thing about the graph is the creation of Germany FR after WWII, being very strong after a few rough no shows after the war. Actally beating Germany in number of semi-final place, just showing how long Germany was split up. Finally, looking at the world cup semi-finalist over time, there is definatly an increase in the number of teams that have gotten to the semi-finals. With a steady increase from the beginning, only stoping during WWII. Also fun fact, the U.S has only been in the semi-finals once, and it was the first world cup. You can actually see how the USA has stayed constant over all this time. 
 
 
 
+Scoreing Over Time
+============================
+The next question we set out to answer, was whither the number of scoring has increased over time. And also, how has scoring effected the attendence of a match.
+
+This figure shows the number of scores per year. The second shows the average number of scores per game over time. 
+
+.. figure:: image/scores.png
+
+What the first plot shows, is that as time yet on, more and more matches were played. This meant more points, and an increase of scores over time. This graph highlights the increase populatiy of the world cup. The other graph shows how dominate the world cup teams were over time. in the first few cups, the games were averaging about 4 scores a game, which in football is quite high on average. This shows that the few teams that were playing, the scoring was very high and possible one sided. If it wasn't one sided then at the very least it was a lot of scoring on both teams. Continueing to later years, the amount of scores per game goes lower and lower. This contrasted with the first few world cups shows that, over time, the teams got so good at predicting the other teams moves, that most games were a stand still going to the end with an average of one point per time over and average 2 points. So from both of these graphs, it can be shown that as time went on, more games were played, and the teams were more compitive. 
+
+Also related to this section is the attendence per game vs. scoring. The attendence data will be seen in more detail later on, but for now, let's look at how the attendence vs. scoring has changed. This figure has three plots, the first looks at attendence per game over time, the second looks at attendence per game vs total scores, and finally a plot on attendence per game vs scores per game. 
+
+.. figure:: image/attscore.png
+
+The first graph we'll look at later in the website. as for the other two, there does seem to be the ever so common postive slope for total and the negative slope for average/ratio. To further clarify this, the second graph has a negative slope as there are more scores. This happened because as the world cup got more popular, more people showed up at a game. Yet at the same time, more matches were played. So this increase comes from more popularity in the world cup along with more matches per world cup. The third graph shows how as the average score per game goes up, the average attendence of said game goes down. This can be explained like the other figure above. As the world cup got popular (an increase in attendence) the teams started getting more competative and scoring less per game. So this would create a negative coorelation between average attendence per game and average scores per game. The one point we'd like to mention is the 1994 point at the top. This point is significantly higher than any other point. After some investigation, it became clear that 1994 was the most attendened world cup ever! This would explain the high average attendence per match as well as the weirdly high average attendves per game vs total scores and vs average scores per game. More about that later.
+
+
+
+
+
+Conclusion
+===================
+#. Being the Host country does not increase your chance of winning. Even as time went on, the host country never really had any adventage, even though the average percent of wins were above 50%
+#. Being the home team did at one point increase your chance of winning. But now the home and away teams a much more evenly spaced. 
+#. As the world cup got more popular, more teams starting showing up and winning matches. 
+#. Over time, the world cup has gotten more matches while scoring less per game.
+#. 
