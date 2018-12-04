@@ -69,7 +69,7 @@
 </div>
 <div class="section" id="data-accusition">
 <h1>Data Accusition<a class="headerlink" href="#data-accusition" title="Permalink to this headline">¶</a></h1>
-<p>The first step to any data science project, is to aquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, expetinoally sports. And after looking around for a while, we did in fact find the data we were looking for <cite>here &lt;...&gt;</cite>. On that website&#8217;s page, we found three datasets. The first had information on the gernal world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data monuvering to get them all together and working. This was done by doing a quick join in pandas like this:
+<p>The first step to any data science project, is to aquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, expetinoally sports. And after looking around for a while, we did in fact find the data we were looking for <a class="reference external" href="...">here</a>. On that website&#8217;s page, we found three datasets. The first had information on the gernal world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data monuvering to get them all together and working. This was done by doing a quick join in pandas like this:
 .. code-block:: python</p>
 <blockquote>
 <div>matchesJoin = matches.set_index([&#8216;Year&#8217;]).join(cups.drop([&#8216;Attendance&#8217;],axis = 1).set_index([&#8216;Year&#8217;]))</div></blockquote>
@@ -77,7 +77,7 @@
 </div>
 <div class="section" id="host-country-data">
 <h1>Host Country Data<a class="headerlink" href="#host-country-data" title="Permalink to this headline">¶</a></h1>
-<p>To start answer the big question <strong>How has the world cup changed over time?</strong> we started by looking at how the host country did over time, and how has being the &#8220;home&#8221; country changed over time. <a href="#id1"><span class="problematic" id="id2">`</span></a>Here &lt;notebooks/Worldcupdata[HostCountry].ipynb&gt; is the analysis of that data</p>
+<p>To start answer the big question <strong>How has the world cup changed over time?</strong> we started by looking at how the host country did over time, and how has being the &#8220;home&#8221; country changed over time. <a class="reference external" href="notebooks/Worldcupdata[HostCountry].ipynb">Here</a> is the analysis of that data</p>
 <p>From this analysis we created four graphs. The first one shows the number of times a host country made it into the final four.</p>
 </div>
 
