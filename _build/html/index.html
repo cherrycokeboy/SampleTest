@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to Football Visualization! &#8212; FootBall Visualzation  documentation</title>
+    <title>Welcome to Austin H and Gavin’s Football Visualization Website! &#8212; FootBall Visualzation  documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -41,7 +41,7 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to Football Visualization!</a></li>
+<li><a class="reference internal" href="#">Welcome to Austin H and Gavin&#8217;s Football Visualization Website!</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 <li><a class="reference internal" href="#abstract">Abstract</a></li>
 <li><a class="reference internal" href="#data-acquisition-and-manipulation">Data Acquisition and Manipulation</a></li>
@@ -49,7 +49,7 @@
 <li><a class="reference internal" href="#home-team-data">Home Team Data</a></li>
 <li><a class="reference internal" href="#country-wins">Country Wins</a></li>
 <li><a class="reference internal" href="#semi-finals">Semi-Finals</a></li>
-<li><a class="reference internal" href="#scouring-over-time">Scouring Over Time</a></li>
+<li><a class="reference internal" href="#scoring-over-time">Scoring Over Time</a></li>
 <li><a class="reference internal" href="#attendance">Attendance</a></li>
 <li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
@@ -79,8 +79,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-football-visualization">
-<h1>Welcome to Football Visualization!<a class="headerlink" href="#welcome-to-football-visualization" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-austin-h-and-gavin-s-football-visualization-website">
+<h1>Welcome to Austin H and Gavin&#8217;s Football Visualization Website!<a class="headerlink" href="#welcome-to-austin-h-and-gavin-s-football-visualization-website" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -107,7 +107,7 @@
 </div>
 <div class="section" id="data-acquisition-and-manipulation">
 <h1>Data Acquisition and Manipulation<a class="headerlink" href="#data-acquisition-and-manipulation" title="Permalink to this headline">¶</a></h1>
-<p>The first step to any data science project, is to acquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, exceptionally sports. And after looking around for a while, we did in fact find the data we were looking for <a class="reference external" href="...">here</a>. On that website&#8217;s page, we found three datasets. The first had information on the general world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data maneuvering to get them all together and working. This was done by doing a quick join in pandas like this:</p>
+<p>The first step to any data science project, is to acquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, exceptionally sports. And after looking around for a while, we did in fact find the data we were looking for <a href="#id1"><span class="problematic" id="id2">`here`_</span></a>. On that website&#8217;s page, we found three datasets. The first had information on the general world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data maneuvering to get them all together and working. This was done by doing a quick join in pandas like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">matchesJoin</span> <span class="o">=</span> <span class="n">matches</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cups</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Attendance&#39;</span><span class="p">],</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
@@ -116,7 +116,7 @@
 </div>
 <div class="section" id="host-country-data">
 <h1>Host Country Data<a class="headerlink" href="#host-country-data" title="Permalink to this headline">¶</a></h1>
-<p>To start answer the big question <strong>How has the world cup changed over time?</strong> we started by looking at how the host country did over time, and how has being the &#8220;home&#8221; country changed over time. <a class="reference external" href="notebooks/Worldcupdata.ipynb">Here</a> is the analysis of that data</p>
+<p>To start answer the big question <strong>How has the world cup changed over time?</strong> we started by looking at how the host country did over time, and how has being the &#8220;home&#8221; country changed over time. <a href="#id3"><span class="problematic" id="id4">`Here`_</span></a> is the analysis of that data</p>
 <p>From this analysis we created two graphs. The first one shows the number of times a host country made it into the final four.</p>
 <div class="figure">
 <img alt="_images/hosttopfour.png" src="_images/hosttopfour.png" />
@@ -161,14 +161,14 @@
 <div class="section" id="semi-finals">
 <h1>Semi-Finals<a class="headerlink" href="#semi-finals" title="Permalink to this headline">¶</a></h1>
 <p>The next graph answers the question: &#8220;Which country has gotten to the most semi-finals?&#8221;
-This section only has one graph but it is an interaction graph. Again, you won&#8217;t be able to view on the website so instead, view it <a class="reference external" href="...">here</a>. This graph shows the amount of semi-final finishes per country over time. The picture below shows the total number of semi-final finishes between 1930 and 2014.</p>
+This section only has one graph but it is an interaction graph. Again, you won&#8217;t be able to view on the website so instead, view it <a href="#id5"><span class="problematic" id="id6">`here`_</span></a>. This graph shows the amount of semi-final finishes per country over time. The picture below shows the total number of semi-final finishes between 1930 and 2014.</p>
 <div class="figure">
 <img alt="_images/semi-finals.png" src="_images/semi-finals.png" />
 </div>
 <p>The first interesting thing to note is that the first two world cups didn&#8217;t have a single repeat in semi-finalists. Showing that back then, no country was yet a dominate force to be reckoned with just yet. Also another thing about the first few world cups, Brazil (the soon to be number one football team) was not in the first two semi-finals. However, after that time, there semi-final placements would skyrocket at a fast pace. Another interesting thing about the graph is the creation of Germany FR after WWII, being very strong after a few rough no shows after the war. Actually beating Germany in number of semi-final place, just showing how long Germany was split up. Finally, looking at the world cup semi-finalist over time, there is defiantly an increase in the number of teams that have gotten to the semi-finals. With a steady increase from the beginning, only stopping during WWII. Also fun fact, the U.S has only been in the semi-finals once, and it was the first world cup. You can actually see how the USA has stayed constant over all this time.</p>
 </div>
-<div class="section" id="scouring-over-time">
-<h1>Scouring Over Time<a class="headerlink" href="#scouring-over-time" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="scoring-over-time">
+<h1>Scoring Over Time<a class="headerlink" href="#scoring-over-time" title="Permalink to this headline">¶</a></h1>
 <p>The next question we set out to answer, was whither the number of scoring has increased over time. And also, how has scoring effected the attendance of a match.</p>
 <p>This figure shows the number of scores per year. The second shows the average number of scores per game over time.</p>
 <div class="figure">
@@ -183,7 +183,7 @@ This section only has one graph but it is an interaction graph. Again, you won&#
 </div>
 <div class="section" id="attendance">
 <h1>Attendance<a class="headerlink" href="#attendance" title="Permalink to this headline">¶</a></h1>
-<p>The attendance graph shows the total attendance per year at the FIFA World Cup.</p>
+<p>The attendance graph shows the total attendance per year at the FIFA World Cup, also the code to create this graph in located <a href="#id7"><span class="problematic" id="id8">`Here`_</span></a></p>
 <div class="figure">
 <img alt="_images/attend.png" src="_images/attend.png" />
 </div>
