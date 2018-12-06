@@ -107,7 +107,7 @@
 </div>
 <div class="section" id="data-acquisition-and-manipulation">
 <h1>Data Acquisition and Manipulation<a class="headerlink" href="#data-acquisition-and-manipulation" title="Permalink to this headline">¶</a></h1>
-<p>The first step to any data science project, is to acquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, exceptionally sports. And after looking around for a while, we did in fact find the data we were looking for <a href="#id1"><span class="problematic" id="id2">`here`_</span></a>. On that website&#8217;s page, we found three datasets. The first had information on the general world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data maneuvering to get them all together and working. This was done by doing a quick join in pandas like this:</p>
+<p>The first step to any data science project, is to acquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, exceptionally sports. And after looking around for a while, we did in fact find the data we were looking for <a class="reference external" href="...">here</a>. On that website&#8217;s page, we found three datasets. The first had information on the general world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data maneuvering to get them all together and working. This was done by doing a quick join in pandas like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">matchesJoin</span> <span class="o">=</span> <span class="n">matches</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cups</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Attendance&#39;</span><span class="p">],</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
@@ -116,7 +116,7 @@
 </div>
 <div class="section" id="host-country-data">
 <h1>Host Country Data<a class="headerlink" href="#host-country-data" title="Permalink to this headline">¶</a></h1>
-<p>To start answer the big question <strong>How has the world cup changed over time?</strong> we started by looking at how the host country did over time, and how has being the &#8220;home&#8221; country changed over time. <a href="#id3"><span class="problematic" id="id4">`Here`_</span></a> is the analysis of that data</p>
+<p>To start answer the big question <strong>How has the world cup changed over time?</strong> we started by looking at how the host country did over time, and how has being the &#8220;home&#8221; country changed over time. <a class="reference internal" href="notebooks/Worldcupdata/Worldcupdata.html"><span class="doc">Here</span></a> is the analysis of that data</p>
 <p>From this analysis we created two graphs. The first one shows the number of times a host country made it into the final four.</p>
 <div class="figure">
 <img alt="_images/hosttopfour.png" src="_images/hosttopfour.png" />
@@ -161,7 +161,7 @@
 <div class="section" id="semi-finals">
 <h1>Semi-Finals<a class="headerlink" href="#semi-finals" title="Permalink to this headline">¶</a></h1>
 <p>The next graph answers the question: &#8220;Which country has gotten to the most semi-finals?&#8221;
-This section only has one graph but it is an interaction graph. Again, you won&#8217;t be able to view on the website so instead, view it <a href="#id5"><span class="problematic" id="id6">`here`_</span></a>. This graph shows the amount of semi-final finishes per country over time. The picture below shows the total number of semi-final finishes between 1930 and 2014.</p>
+This section only has one graph but it is an interaction graph. Again, you won&#8217;t be able to view on the website so instead, view it <a class="reference external" href="notebooks/Worldcupdata.ipynb">here</a>. This graph shows the amount of semi-final finishes per country over time. The picture below shows the total number of semi-final finishes between 1930 and 2014.</p>
 <div class="figure">
 <img alt="_images/semi-finals.png" src="_images/semi-finals.png" />
 </div>
@@ -183,7 +183,7 @@ This section only has one graph but it is an interaction graph. Again, you won&#
 </div>
 <div class="section" id="attendance">
 <h1>Attendance<a class="headerlink" href="#attendance" title="Permalink to this headline">¶</a></h1>
-<p>The attendance graph shows the total attendance per year at the FIFA World Cup, also the code to create this graph in located <a href="#id7"><span class="problematic" id="id8">`Here`_</span></a></p>
+<p>The attendance graph shows the total attendance per year at the FIFA World Cup, also the code to create this graph in located <a class="reference external" href="attendence.ipynb">Here</a></p>
 <div class="figure">
 <img alt="_images/attend.png" src="_images/attend.png" />
 </div>

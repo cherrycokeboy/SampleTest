@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to Austin H and Gavin's Football Visualization Website!
-=====================================================================
+====================================================================
 
 .. toctree::
    :maxdepth: 2
@@ -36,7 +36,7 @@ In the end, we found that the world cup has been increasing in popularity and in
 
 Data Acquisition and Manipulation
 ======================================
-The first step to any data science project, is to acquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, exceptionally sports. And after looking around for a while, we did in fact find the data we were looking for `here`_. On that website's page, we found three datasets. The first had information on the general world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data maneuvering to get them all together and working. This was done by doing a quick join in pandas like this: 
+The first step to any data science project, is to acquire some data. In our project, this was done be vigorously scrolling through the internet, trying to find any data on the World Cup. Our first stop was kaggle.com, because it has some really good data on a lot of different subjects, exceptionally sports. And after looking around for a while, we did in fact find the data we were looking for `here <...>`_. On that website's page, we found three datasets. The first had information on the general world cups from 1930 to 2014. The second had information on each match that happened at each world cup. The last on had information each people and couch of each team in each world cup. From this data, we had to do a little data maneuvering to get them all together and working. This was done by doing a quick join in pandas like this: 
 
 .. code-block:: python
 
@@ -49,7 +49,7 @@ The other big change to the data was adding a column for which team won each mat
 
 Host Country Data
 ==========================================
-To start answer the big question **How has the world cup changed over time?** we started by looking at how the host country did over time, and how has being the "home" country changed over time. `Here`_ is the analysis of that data
+To start answer the big question **How has the world cup changed over time?** we started by looking at how the host country did over time, and how has being the "home" country changed over time. `Here <notebooks/Worldcupdata/Worldcupdata.md>`_ is the analysis of that data
 
 From this analysis we created two graphs. The first one shows the number of times a host country made it into the final four. 
 
@@ -100,7 +100,7 @@ this figure doesn't have the interactive parts to it but the notebook does here.
 Semi-Finals
 ==================
 The next graph answers the question: "Which country has gotten to the most semi-finals?"
-This section only has one graph but it is an interaction graph. Again, you won't be able to view on the website so instead, view it `here`_. This graph shows the amount of semi-final finishes per country over time. The picture below shows the total number of semi-final finishes between 1930 and 2014. 
+This section only has one graph but it is an interaction graph. Again, you won't be able to view on the website so instead, view it `here <notebooks/Worldcupdata.ipynb>`_. This graph shows the amount of semi-final finishes per country over time. The picture below shows the total number of semi-final finishes between 1930 and 2014. 
 
 .. figure:: image/semi-finals.png
 
@@ -126,7 +126,7 @@ The first graph we'll look at later in the website. as for the other two, there 
 
 Attendance
 ================
-The attendance graph shows the total attendance per year at the FIFA World Cup, also the code to create this graph in located `Here`_
+The attendance graph shows the total attendance per year at the FIFA World Cup, also the code to create this graph in located `Here <attendence.ipynb>`_
 
 .. figure:: image/attend.png
 
