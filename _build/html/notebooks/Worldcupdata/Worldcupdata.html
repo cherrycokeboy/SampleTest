@@ -96,7 +96,7 @@
 <span class="n">cups</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;WorldCups.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">matches</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#matches.dropna()</span>
 </pre></div>
 </div>
 <div>
@@ -1549,7 +1549,7 @@
 </div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">final_matches</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="n">matches</span><span class="p">[</span><span class="s1">&#39;Stage&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Final&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">final_matches</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#final_matches</span>
 </pre></div>
 </div>
 <div>
@@ -2310,7 +2310,7 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">matchesJoin</span> <span class="o">=</span> <span class="n">matches</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cups</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Attendance&#39;</span><span class="p">],</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">matchesJoin</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#matchesJoin.head()</span>
 </pre></div>
 </div>
 <div>
@@ -2516,7 +2516,7 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">matchesJoin</span> <span class="o">=</span> <span class="n">matchesJoin</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">matchesJoin</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#matchesJoin</span>
 </pre></div>
 </div>
 <div>
@@ -4036,7 +4036,7 @@
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">matchesJoin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;tabdata.txt&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">matchesJoin</span>
+<span class="c1">#matchesJoin</span>
 </pre></div>
 </div>
 <div>
@@ -7733,7 +7733,7 @@
 </pre></div>
 </div>
 <p><img alt="png" src="../../_images/output_49_0.png" /></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span> <span class="c1">#interactive, fixed, interact_manual</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="kn">as</span> <span class="nn">widgets</span>
 <span class="n">totalMatchesWonByYear</span> <span class="o">=</span> <span class="n">matchesJoin</span><span class="p">[[</span><span class="s1">&#39;Winner Country&#39;</span><span class="p">,</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span><span class="s1">&#39;Year&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Winner Country&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">totalMatchesWonByYear</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -8299,79 +8299,10 @@
     </tr>
   </tbody>
 </table>
-</div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#p1= plt.bar(masterGroupbyFinalFour.index,masterGroupbyFinalFour[&#39;WinnerCount&#39;],stacked=True)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">masterGroupbyFinalFour</span><span class="p">[</span><span class="s1">&#39;WinnerCount&#39;</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">masterGroupbyFinalFour</span><span class="p">[</span><span class="s1">&#39;Runners-UpCount&#39;</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span><span class="n">stacked</span><span class="o">=</span><span class="bp">True</span> <span class="p">)]</span>
-<span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">masterGroupbyFinalFour</span><span class="p">[</span><span class="s1">&#39;ThirdCount&#39;</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">masterGroupbyFinalFour</span><span class="p">[</span><span class="s1">&#39;FourthCount&#39;</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">)]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
-
-<span class="ne">AttributeError</span>                            <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
-
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">686</span><span class="o">-</span><span class="mi">484</span><span class="n">b8f355636</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
-      <span class="mi">1</span> <span class="c1">#p1= plt.bar(masterGroupbyFinalFour.index,masterGroupbyFinalFour[&#39;WinnerCount&#39;],stacked=True)</span>
-      <span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="o">----&gt;</span> <span class="mi">3</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">masterGroupbyFinalFour</span><span class="p">[</span><span class="s1">&#39;WinnerCount&#39;</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">masterGroupbyFinalFour</span><span class="p">[</span><span class="s1">&#39;Runners-UpCount&#39;</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span> <span class="p">)]</span>
-      <span class="mi">4</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">masterGroupbyFinalFour</span><span class="p">[</span><span class="s1">&#39;ThirdCount&#39;</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">masterGroupbyFinalFour</span><span class="p">[</span><span class="s1">&#39;FourthCount&#39;</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">)]</span>
-      <span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">pyplot</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">bar</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-   <span class="mi">2768</span>                       <span class="n">mplDeprecation</span><span class="p">)</span>
-   <span class="mi">2769</span>     <span class="k">try</span><span class="p">:</span>
-<span class="o">-&gt;</span> <span class="mi">2770</span>         <span class="n">ret</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-   <span class="mi">2771</span>     <span class="k">finally</span><span class="p">:</span>
-   <span class="mi">2772</span>         <span class="n">ax</span><span class="o">.</span><span class="n">_hold</span> <span class="o">=</span> <span class="n">washold</span>
-
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-   <span class="mi">1853</span>                         <span class="s2">&quot;the Matplotlib list!)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">label_namer</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">),</span>
-   <span class="mi">1854</span>                         <span class="ne">RuntimeWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">-&gt;</span> <span class="mi">1855</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-   <span class="mi">1856</span> 
-   <span class="mi">1857</span>         <span class="n">inner</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">_add_data_doc</span><span class="p">(</span><span class="n">inner</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">,</span>
-
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">axes</span><span class="o">/</span><span class="n">_axes</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-   <span class="mi">2278</span>                 <span class="n">label</span><span class="o">=</span><span class="s1">&#39;_nolegend_&#39;</span><span class="p">,</span>
-   <span class="mi">2279</span>                 <span class="p">)</span>
-<span class="o">-&gt;</span> <span class="mi">2280</span>             <span class="n">r</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
-   <span class="mi">2281</span>             <span class="n">r</span><span class="o">.</span><span class="n">get_path</span><span class="p">()</span><span class="o">.</span><span class="n">_interpolation_steps</span> <span class="o">=</span> <span class="mi">100</span>
-   <span class="mi">2282</span>             <span class="k">if</span> <span class="n">orientation</span> <span class="o">==</span> <span class="s1">&#39;vertical&#39;</span><span class="p">:</span>
-
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">artist</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">props</span><span class="p">)</span>
-    <span class="mi">886</span>         <span class="k">try</span><span class="p">:</span>
-    <span class="mi">887</span>             <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">_update_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-<span class="o">--&gt;</span> <span class="mi">888</span>                    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">props</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-    <span class="mi">889</span>         <span class="k">finally</span><span class="p">:</span>
-    <span class="mi">890</span>             <span class="bp">self</span><span class="o">.</span><span class="n">eventson</span> <span class="o">=</span> <span class="n">store</span>
-
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">artist</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">listcomp</span><span class="o">&gt;</span><span class="p">(</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span>
-    <span class="mi">886</span>         <span class="k">try</span><span class="p">:</span>
-    <span class="mi">887</span>             <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">_update_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-<span class="o">--&gt;</span> <span class="mi">888</span>                    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">props</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-    <span class="mi">889</span>         <span class="k">finally</span><span class="p">:</span>
-    <span class="mi">890</span>             <span class="bp">self</span><span class="o">.</span><span class="n">eventson</span> <span class="o">=</span> <span class="n">store</span>
-
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">artist</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">_update_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-    <span class="mi">879</span>                 <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;set_&#39;</span> <span class="o">+</span> <span class="n">k</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="mi">880</span>                 <span class="k">if</span> <span class="ow">not</span> <span class="n">callable</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<span class="o">--&gt;</span> <span class="mi">881</span>                     <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Unknown property </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">k</span><span class="p">)</span>
-    <span class="mi">882</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="mi">883</span> 
-
-
-<span class="ne">AttributeError</span><span class="p">:</span> <span class="n">Unknown</span> <span class="nb">property</span> <span class="n">stacked</span>
-</pre></div>
-</div>
-<p><img alt="png" src="../../_images/output_58_1.png" /></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">columns</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Index</span><span class="p">([</span><span class="s1">&#39;WinnerCount&#39;</span><span class="p">,</span> <span class="s1">&#39;Runners-UpCount&#39;</span><span class="p">,</span> <span class="s1">&#39;ThirdCount&#39;</span><span class="p">,</span> <span class="s1">&#39;FourthCount&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">masterGroupbyFinalFour</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
@@ -8381,7 +8312,7 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">_subplots</span><span class="o">.</span><span class="n">AxesSubplot</span> <span class="n">at</span> <span class="mh">0x7f96c2a17eb8</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p><img alt="png" src="../../_images/output_60_1.png" /></p>
+<p><img alt="png" src="../../_images/output_59_1.png" /></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">masterGroupbyFinalFour</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 

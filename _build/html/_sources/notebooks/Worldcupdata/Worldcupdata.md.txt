@@ -18,7 +18,7 @@ cups = pd.read_csv('WorldCups.csv')
 
 
 ```python
-matches.dropna()
+#matches.dropna()
 ```
 
 
@@ -1482,7 +1482,7 @@ final_matches = matches[matches['Stage'] == 'Final']
 
 
 ```python
-final_matches
+#final_matches
 ```
 
 
@@ -2275,7 +2275,7 @@ matchesJoin = matches.set_index(['Year']).join(cups.drop(['Attendance'],axis = 1
 
 
 ```python
-matchesJoin.head()
+#matchesJoin.head()
 ```
 
 
@@ -2501,7 +2501,7 @@ matchesJoin = matchesJoin.dropna()
 
 
 ```python
-matchesJoin
+#matchesJoin
 ```
 
 
@@ -4033,7 +4033,7 @@ This section is my attempt to create a column that has whither or not a team's n
 
 ```python
 matchesJoin = pd.read_csv('tabdata.txt', sep="\t")
-matchesJoin
+#matchesJoin
 ```
 
 
@@ -7840,7 +7840,7 @@ plt.show()
 
 
 ```python
-from ipywidgets import interact, interactive, fixed, interact_manual
+from ipywidgets import interact #interactive, fixed, interact_manual
 import ipywidgets as widgets
 totalMatchesWonByYear = matchesJoin[['Winner Country','Country','Year']].groupby(['Year','Winner Country']).count()
 totalMatchesWonByYear.reset_index(inplace=True)
@@ -8459,86 +8459,15 @@ masterGroupbyFinalFour
 
 
 ```python
-#p1= plt.bar(masterGroupbyFinalFour.index,masterGroupbyFinalFour['WinnerCount'],stacked=True)
-plt.figure(figsize=(25,5))
-[plt.bar(masterGroupbyFinalFour.index, masterGroupbyFinalFour['WinnerCount'], align='edge', width= 0.2),plt.bar(masterGroupbyFinalFour.index, masterGroupbyFinalFour['Runners-UpCount'], align='edge', width= 0.2,stacked=True )]
-[plt.bar(masterGroupbyFinalFour.index, masterGroupbyFinalFour['ThirdCount'], align='edge', width= -0.2), plt.bar(masterGroupbyFinalFour.index, masterGroupbyFinalFour['FourthCount'], align='edge', width= -0.2)]
-plt.xticks(rotation=90)
-plt.show()
-```
-
-
-    ---------------------------------------------------------------------------
-
-    AttributeError                            Traceback (most recent call last)
-
-    <ipython-input-686-484b8f355636> in <module>()
-          1 #p1= plt.bar(masterGroupbyFinalFour.index,masterGroupbyFinalFour['WinnerCount'],stacked=True)
-          2 plt.figure(figsize=(25,5))
-    ----> 3 [plt.bar(masterGroupbyFinalFour.index, masterGroupbyFinalFour['WinnerCount'], align='edge', width= 0.2),plt.bar(masterGroupbyFinalFour.index, masterGroupbyFinalFour['Runners-UpCount'], align='edge', width= 0.2,stacked=True )]
-          4 [plt.bar(masterGroupbyFinalFour.index, masterGroupbyFinalFour['ThirdCount'], align='edge', width= -0.2), plt.bar(masterGroupbyFinalFour.index, masterGroupbyFinalFour['FourthCount'], align='edge', width= -0.2)]
-          5 plt.xticks(rotation=90)
-
-
-    /usr/local/lib/python3.5/site-packages/matplotlib/pyplot.py in bar(*args, **kwargs)
-       2768                       mplDeprecation)
-       2769     try:
-    -> 2770         ret = ax.bar(*args, **kwargs)
-       2771     finally:
-       2772         ax._hold = washold
-
-
-    /usr/local/lib/python3.5/site-packages/matplotlib/__init__.py in inner(ax, *args, **kwargs)
-       1853                         "the Matplotlib list!)" % (label_namer, func.__name__),
-       1854                         RuntimeWarning, stacklevel=2)
-    -> 1855             return func(ax, *args, **kwargs)
-       1856 
-       1857         inner.__doc__ = _add_data_doc(inner.__doc__,
-
-
-    /usr/local/lib/python3.5/site-packages/matplotlib/axes/_axes.py in bar(self, *args, **kwargs)
-       2278                 label='_nolegend_',
-       2279                 )
-    -> 2280             r.update(kwargs)
-       2281             r.get_path()._interpolation_steps = 100
-       2282             if orientation == 'vertical':
-
-
-    /usr/local/lib/python3.5/site-packages/matplotlib/artist.py in update(self, props)
-        886         try:
-        887             ret = [_update_property(self, k, v)
-    --> 888                    for k, v in props.items()]
-        889         finally:
-        890             self.eventson = store
-
-
-    /usr/local/lib/python3.5/site-packages/matplotlib/artist.py in <listcomp>(.0)
-        886         try:
-        887             ret = [_update_property(self, k, v)
-    --> 888                    for k, v in props.items()]
-        889         finally:
-        890             self.eventson = store
-
-
-    /usr/local/lib/python3.5/site-packages/matplotlib/artist.py in _update_property(self, k, v)
-        879                 func = getattr(self, 'set_' + k, None)
-        880                 if not callable(func):
-    --> 881                     raise AttributeError('Unknown property %s' % k)
-        882                 return func(v)
-        883 
-
-
-    AttributeError: Unknown property stacked
-
-
-
-![png](output_58_1.png)
-
-
-
-```python
 masterGroupbyFinalFour.columns
 ```
+
+
+
+
+    Index(['WinnerCount', 'Runners-UpCount', 'ThirdCount', 'FourthCount'], dtype='object')
+
+
 
 
 ```python
@@ -8554,7 +8483,7 @@ masterGroupbyFinalFour.plot.bar(stacked=True, figsize=(10,7))
 
 
 
-![png](output_60_1.png)
+![png](output_59_1.png)
 
 
 
