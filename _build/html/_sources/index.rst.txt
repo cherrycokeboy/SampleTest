@@ -100,7 +100,7 @@ this figure doesn't have the interactive parts to it but the notebook does here.
 Semi-Finals
 ==================
 The next graph answers the question: "Which country has gotten to the most semi-finals?"
-This section only has one graph but it is an interaction graph. Again, you won't be able to view on the website so instead, view it `here <notebooks/Worldcupdata.ipynb>`_. This graph shows the amount of semi-final finishes per country over time. The picture below shows the total number of semi-final finishes between 1930 and 2014. 
+This section only has one graph but it is an interaction graph. Again, you won't be able to view on the website so instead, view it `here <notebooks/Worldcupdata/Worldcupdata.md>`_. This graph shows the amount of semi-final finishes per country over time. The picture below shows the total number of semi-final finishes between 1930 and 2014. 
 
 .. figure:: image/semi-finals.png
 
@@ -126,7 +126,7 @@ The first graph we'll look at later in the website. as for the other two, there 
 
 Attendance
 ================
-The attendance graph shows the total attendance per year at the FIFA World Cup, also the code to create this graph in located `Here <attendence.ipynb>`_
+The attendance graph shows the total attendance per year at the FIFA World Cup.
 
 .. figure:: image/attend.png
 
